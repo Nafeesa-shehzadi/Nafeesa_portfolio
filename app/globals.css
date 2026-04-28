@@ -24,3 +24,9 @@ body {
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: rgba(0,255,178,0.3); border-radius: 2px; }
 ::selection { background: rgba(0,255,178,0.15); color: #fff; }
+
+@media (hover: none), (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
+}

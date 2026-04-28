@@ -3,74 +3,134 @@ import { useEffect, useRef } from 'react'
 
 export default function Hero() {
   const lineRef = useRef<HTMLDivElement>(null)
+
   useEffect(() => {
+    let frame = 0
     let t = 0
+
     const raf = () => {
       t++
-      if (lineRef.current && t % 40 === 0) lineRef.current.style.opacity = lineRef.current.style.opacity === '0' ? '1' : '0'
-      requestAnimationFrame(raf)
+      if (lineRef.current && t % 40 === 0) {
+        lineRef.current.style.opacity = lineRef.current.style.opacity === '0' ? '1' : '0'
+      }
+      frame = requestAnimationFrame(raf)
     }
-    requestAnimationFrame(raf)
+
+    frame = requestAnimationFrame(raf)
+    return () => cancelAnimationFrame(frame)
   }, [])
 
   return (
-    <section id="hero" className="min-h-screen flex flex-col justify-center relative" style={{ padding: '0 6vw', paddingRight: '52vw' }}>
-      {/* Eyebrow */}
-      <div className="flex items-center gap-3 mb-6 animate-[fadeUp_0.8s_0.2s_both]" style={{ animationFillMode: 'both', opacity: 0, animation: 'fadeUp 0.8s 0.2s forwards' }}>
-        <div className="w-8 h-px" style={{ background: 'var(--accent)' }} />
-        <span className="text-xs tracking-[0.22em] uppercase" style={{ color: 'var(--accent)' }}>Frontend Software Engineer</span>
+    <section id="hero" className="relative flex min-h-screen flex-col justify-center px-4 pb-20 pt-28 sm:px-6 sm:pb-24 sm:pt-32 md:px-[6vw] lg:pr-[37vw] lg:pt-24 xl:pr-[42vw] 2xl:pr-[52vw]">
+      <div className="mb-6 flex items-center gap-3 animate-[fadeUp_0.8s_0.2s_both]" style={{ animationFillMode: 'both', opacity: 0, animation: 'fadeUp 0.8s 0.2s forwards' }}>
+        <div className="h-px w-8" style={{ background: 'var(--accent)' }} />
+        <span className="text-[11px] uppercase tracking-[0.22em] sm:text-xs" style={{ color: 'var(--accent)' }}>
+          Frontend Software Engineer
+        </span>
       </div>
 
-      {/* Name */}
-      <h1 className="font-syne font-black leading-[0.88] mb-4" style={{
-        fontSize: 'clamp(3.5rem, 7vw, 6.5rem)',
-        letterSpacing: '-0.03em',
-        background: 'linear-gradient(135deg, #E2EEFF 30%, #00FFB2 70%, #B16FFF 100%)',
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
-      }}>
-        Nafeesa<br/>Shehzadi
-        <span ref={lineRef} style={{ display: 'inline-block', width: '3px', height: '0.85em', background: 'var(--accent)', marginLeft: '6px', verticalAlign: 'middle', transition: 'opacity 0.1s' }}>|</span>
+      <h1
+        className="mb-4 max-w-[9.5ch] font-syne font-black leading-[0.9] lg:max-w-[8.75ch] 2xl:max-w-[10ch]"
+        style={{
+          fontSize: 'clamp(2.65rem, 6.5vw, 5.8rem)',
+          letterSpacing: '-0.03em',
+          background: 'linear-gradient(135deg, #E2EEFF 30%, #00FFB2 70%, #B16FFF 100%)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+        }}
+      >
+        Nafeesa
+        <br />
+        Shehzadi
+        <span
+          ref={lineRef}
+          style={{
+            display: 'inline-block',
+            width: '3px',
+            height: '0.85em',
+            background: 'var(--accent)',
+            marginLeft: '6px',
+            verticalAlign: 'middle',
+            transition: 'opacity 0.1s',
+          }}
+        >
+          |
+        </span>
       </h1>
 
-      {/* Role */}
-      <p className="font-mono italic text-lg mb-6" style={{ color: 'rgba(226,238,255,0.4)', fontSize: 'clamp(0.9rem, 1.8vw, 1.2rem)' }}>
-        // React · Next.js · TypeScript · AI Integrations
+      <p className="mb-6 max-w-[34rem] font-mono text-[0.9rem] italic sm:text-[1rem] xl:text-[1.05rem]" style={{ color: 'rgba(226,238,255,0.4)' }}>
+        // Next.js · React · React Native · Ionic · AI Chatbots
       </p>
 
-      {/* Description */}
-      <p className="mb-10 leading-[2] font-mono" style={{ maxWidth: '500px', color: 'rgba(226,238,255,0.5)', fontSize: '0.82rem' }}>
-        2 years crafting responsive web apps and AI-powered interfaces.
-        I connect intelligent backends to beautiful, living frontends — with Hume AI, OpenAI EVI, and a passion for interaction design.
+      <p className="mb-10 max-w-[34rem] font-mono text-[0.78rem] leading-[2] sm:text-[0.82rem]" style={{ color: 'rgba(226,238,255,0.5)' }}>
+        2 years building responsive products across web and mobile. I work with Next.js and React for web, React Native and Ionic for apps, and I ship AI models, chatbot flows, and intelligent user experiences with a strong focus on interaction design.
       </p>
 
-      {/* CTAs */}
-      <div className="flex gap-4 flex-wrap">
-        <a href="#projects" className="cursor-none inline-flex items-center gap-2 px-6 py-3 font-mono text-xs tracking-widest uppercase font-bold transition-all duration-250 no-underline"
+      <div className="flex flex-wrap gap-3 sm:gap-4">
+        <a
+          href="#projects"
+          className="cursor-none inline-flex items-center gap-2 px-5 py-3 font-mono text-[11px] font-bold uppercase tracking-[0.22em] no-underline transition-all duration-250 sm:px-6 sm:text-xs"
           style={{ background: 'var(--accent)', color: '#04070F', borderRadius: '2px' }}
-          onMouseEnter={e => { (e.target as HTMLElement).style.background = 'transparent'; (e.target as HTMLElement).style.color = 'var(--accent)'; (e.target as HTMLElement).style.boxShadow = '0 0 30px rgba(0,255,178,0.2), inset 0 0 0 1px var(--accent)' }}
-          onMouseLeave={e => { (e.target as HTMLElement).style.background = 'var(--accent)'; (e.target as HTMLElement).style.color = '#04070F'; (e.target as HTMLElement).style.boxShadow = '' }}
+          onMouseEnter={(e) => {
+            const el = e.currentTarget
+            el.style.background = 'transparent'
+            el.style.color = 'var(--accent)'
+            el.style.boxShadow = '0 0 30px rgba(0,255,178,0.2), inset 0 0 0 1px var(--accent)'
+          }}
+          onMouseLeave={(e) => {
+            const el = e.currentTarget
+            el.style.background = 'var(--accent)'
+            el.style.color = '#04070F'
+            el.style.boxShadow = ''
+          }}
         >
           View Projects →
         </a>
-        <a href="#contact" className="cursor-none inline-flex items-center gap-2 px-6 py-3 font-mono text-xs tracking-widest uppercase transition-all duration-250 no-underline"
+        <a
+          href="#contact"
+          className="cursor-none inline-flex items-center gap-2 px-5 py-3 font-mono text-[11px] uppercase tracking-[0.22em] no-underline transition-all duration-250 sm:px-6 sm:text-xs"
           style={{ color: 'rgba(226,238,255,0.4)', border: '1px solid rgba(226,238,255,0.12)', borderRadius: '2px' }}
-          onMouseEnter={e => { const el = e.currentTarget; el.style.borderColor = 'var(--accent2)'; el.style.color = 'var(--accent2)' }}
-          onMouseLeave={e => { const el = e.currentTarget; el.style.borderColor = 'rgba(226,238,255,0.12)'; el.style.color = 'rgba(226,238,255,0.4)' }}
+          onMouseEnter={(e) => {
+            const el = e.currentTarget
+            el.style.borderColor = 'var(--accent2)'
+            el.style.color = 'var(--accent2)'
+          }}
+          onMouseLeave={(e) => {
+            const el = e.currentTarget
+            el.style.borderColor = 'rgba(226,238,255,0.12)'
+            el.style.color = 'rgba(226,238,255,0.4)'
+          }}
         >
           Get in Touch
         </a>
       </div>
 
-      {/* Scroll hint */}
-      <div className="absolute bottom-10 left-1/4 flex flex-col items-center gap-2" style={{ color: 'rgba(226,238,255,0.3)', fontSize: '0.6rem', letterSpacing: '0.2em' }}>
+      <div className="absolute bottom-8 left-4 hidden flex-col items-center gap-2 sm:left-6 md:left-[6vw] xl:flex" style={{ color: 'rgba(226,238,255,0.3)', fontSize: '0.6rem', letterSpacing: '0.2em' }}>
         <div style={{ width: '1px', height: '48px', background: 'linear-gradient(to bottom, var(--accent), transparent)', animation: 'scpulse 1.6s ease-in-out infinite' }} />
         <span className="uppercase">scroll</span>
       </div>
 
       <style jsx>{`
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes scpulse { 0%,100% { opacity:0.4; } 50% { opacity:1; } }
+        @keyframes fadeUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes scpulse {
+          0%,
+          100% {
+            opacity: 0.4;
+          }
+          50% {
+            opacity: 1;
+          }
+        }
       `}</style>
     </section>
   )

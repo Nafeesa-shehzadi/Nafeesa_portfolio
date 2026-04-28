@@ -38,3 +38,21 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+
+# Logs and databases
+logs
+*.log
+*.sqlite
+*.db
+
+# Cache directories
+.cache
+.turbo
+dist
+
+# Dev server
+.dev-server.log
+
+# OS specific
+Thumbs.db
+.env.example
