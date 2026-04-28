@@ -1,6 +1,6 @@
 'use client'
 import dynamic from 'next/dynamic'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Cursor from '@/components/Cursor'
 import Nav from '@/components/Nav'
 import Hero from '@/components/Hero'
@@ -52,7 +52,7 @@ export default function Page() {
         <Projects />
         <Contact />
       </main>
-      <footer className="relative z-10 text-center py-8 border-t border-white/5 text-xs text-white/30 tracking-widest">
+      <footer className="relative z-10 border-t border-white/5 px-4 py-6 text-center text-[10px] tracking-[0.22em] text-white/30 sm:px-6 sm:py-8 sm:text-xs">
         © 2025 NAFEESA SHEHZADI · BUILT WITH NEXT.JS + THREE.JS
       </footer>
     </>
