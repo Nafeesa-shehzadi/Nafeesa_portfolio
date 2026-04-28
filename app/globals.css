@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: #00FFB2;
+  --accent2: #B16FFF;
+  --accent3: #FF6FB1;
+  --bg: #04070F;
+  --bg2: #080D1A;
+  --bg3: #0D1526;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: #E2EEFF;
+  font-family: 'Space Mono', monospace;
+  overflow-x: hidden;
+  cursor: none;
+}
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: rgba(0,255,178,0.3); border-radius: 2px; }
+::selection { background: rgba(0,255,178,0.15); color: #fff; }
