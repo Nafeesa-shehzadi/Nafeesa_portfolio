@@ -25,7 +25,7 @@ export default function Hero() {
       <div className="mb-6 flex items-center gap-3 animate-[fadeUp_0.8s_0.2s_both]" style={{ animationFillMode: 'both', opacity: 0, animation: 'fadeUp 0.8s 0.2s forwards' }}>
         <div className="h-px w-8" style={{ background: 'var(--accent)' }} />
         <span className="text-[11px] uppercase tracking-[0.22em] sm:text-xs" style={{ color: 'var(--accent)' }}>
-          Frontend Software Engineer
+          Senior Software Engineer
         </span>
       </div>
 
@@ -59,11 +59,11 @@ export default function Hero() {
       </h1>
 
       <p className="mb-6 max-w-[34rem] font-mono text-[0.9rem] italic sm:text-[1rem] xl:text-[1.05rem]" style={{ color: 'rgba(226,238,255,0.4)' }}>
-        // Next.js · React · React Native · Ionic · AI Chatbots
+        // Next.js | React | React Native | Ionic | RAG | AI Agents
       </p>
 
       <p className="mb-10 max-w-[34rem] font-mono text-[0.78rem] leading-[2] sm:text-[0.82rem]" style={{ color: 'rgba(226,238,255,0.5)' }}>
-        2 years building responsive products across web and mobile. I work with Next.js and React for web, React Native and Ionic for apps, and I ship AI models, chatbot flows, and intelligent user experiences with a strong focus on interaction design.
+        I build responsive products across web and mobile using Next.js and React for the web, React Native and Ionic for apps, and AI-powered systems including RAG workflows, agentic experiences, and polished interfaces with a strong focus on interaction design.
       </p>
 
       <div className="flex flex-wrap gap-3 sm:gap-4">
@@ -84,7 +84,7 @@ export default function Hero() {
             el.style.boxShadow = ''
           }}
         >
-          View Projects →
+          View Projects {'->'}
         </a>
         <a
           href="#contact"

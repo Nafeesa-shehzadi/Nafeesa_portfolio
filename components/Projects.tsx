@@ -3,27 +3,48 @@
 const projects = [
   {
     num: '01',
-    name: 'Obi-Menu Web App',
-    type: 'SaaS · Hospitality',
+    name: 'Obenan Admin Dashboard',
+    type: 'Admin | Product Platform',
     color: '#FFAA00',
-    desc: 'Dynamic venue loading via URL slugs. Multi-language (EN/DE/NL), menu categorisation, live item search, cart management, order history - fully responsive.',
-    tags: ['Next.js', 'i18n', 'REST API', 'Responsive Design'],
+    desc: 'Responsive admin dashboard developed using Next.js and modern React architecture, with scalable UI components, data visualization, and secure REST API integrations to deliver maintainable frontend solutions.',
+    tags: ['Next.js', 'React.js', 'Material UI', 'Tailwind CSS', 'Hero UI'],
+    url: '',
   },
   {
     num: '02',
     name: 'AI MedLab',
-    type: 'HealthTech · AI/ML',
+    type: 'HealthTech | AI/ML',
     color: '#FF6FB1',
-    desc: 'ML-trained disease prediction platform with appointment booking, doctor payments via Stripe, workout & diet predictions. Full-stack React + Python/Node/MongoDB.',
-    tags: ['React', 'Python', 'Machine Learning', 'Stripe', 'MongoDB'],
+    desc: 'Full-stack healthcare platform with AI-based disease prediction, online consultation flows, MongoDB-backed data management, Stripe payments, REST APIs, and Python-powered machine learning models.',
+    tags: ['React.js', 'Python', 'Node.js', 'Express.js', 'MongoDB', 'Stripe'],
+    url: '',
   },
   {
     num: '03',
     name: 'Beauty Salon App',
-    type: 'Booking · Full-stack',
+    type: 'Booking | Full-stack',
     color: '#B16FFF',
-    desc: 'Auth-gated booking platform for beauty treatments. Full admin dashboard - view, update, delete appointments with real-time slot availability.',
+    desc: 'Auth-gated booking platform for beauty treatments with admin controls for managing appointments, updating availability, and keeping booking flows smooth and reliable.',
     tags: ['React', 'Auth', 'Admin Panel', 'Booking System'],
+    url: '',
+  },
+  {
+    num: '04',
+    name: 'Obi Menu Mobile App',
+    type: 'Mobile | Menu Management',
+    color: '#7CFF6B',
+    desc: 'Mobile application for menu management built with Ionic Framework, focused on intuitive navigation, reusable UI components, and API-connected flows for a seamless mobile experience.',
+    tags: ['Ionic Framework', 'Mobile UI', 'Navigation', 'REST API'],
+    url: '',
+  },
+  {
+    num: '05',
+    name: 'Furniro Furniture Website',
+    type: 'Ecommerce | Furniture UI',
+    color: '#00C8FF',
+    desc: 'Modern furniture website built as a polished ecommerce-style frontend with clean product presentation, responsive layouts, and detail-focused interface design for a strong visual shopping experience.',
+    tags: ['Next.js', 'React.js', 'Tailwind CSS', 'Responsive Design', 'Ecommerce UI'],
+    url: 'https://furniro-website-sigma.vercel.app/',
   },
 ]
 
@@ -74,6 +95,17 @@ export default function Projects() {
             <p className="mb-4 font-mono text-xs leading-[1.9]" style={{ color: 'rgba(226,238,255,0.4)' }}>
               {p.desc}
             </p>
+            {p.url && (
+              <a
+                href={p.url}
+                target="_blank"
+                rel="noreferrer"
+                className="mb-4 inline-flex text-[10px] uppercase tracking-[0.22em] no-underline"
+                style={{ color: p.color }}
+              >
+                Live: {p.url}
+              </a>
+            )}
             <div className="flex flex-wrap gap-2">
               {p.tags.map((tag) => (
                 <span

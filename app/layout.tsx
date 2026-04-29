@@ -3,7 +3,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Nafeesa Shehzadi - Frontend Engineer',
-  description: 'Frontend Software Engineer specializing in React, Next.js, TypeScript & AI integrations.',
+  description: 'Frontend Software Engineer with 3 years of experience in React, Next.js, React Native, and AI integrations including RAG systems and agentic workflows.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
